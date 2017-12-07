@@ -23,6 +23,7 @@ Page({
          curBdIndex: 0
       },
       firstIndex: -1,
+      lun:[],
       quan:[],
       attrValueList: [],
       hasLocation: false,
@@ -111,7 +112,7 @@ Page({
       });
 
       wx.request({
-          url: app.d.ceshiUrl + '/Api/Product/detail',
+          url: app.d.ceshiUrl + '/Api/Product/detail2',
           method: 'post',
           data: {
               pro_id: option.productId,
@@ -129,18 +130,9 @@ Page({
                   WxParse.wxParse('content', 'html', content, that, 8);
                   that.setData({
                       pro: res.data.pro,
-                      cate_id: res.data.pro.cid,
-                      store: res.data.pro.store,
-                      bannerItem:res.data.lun,
-                      quan:res.data.quan,
-                      param:res.data.param,
-                      prodetail: res.data.prodetail,
-                      prodetail2: res.data.prodetail[0],
-                      shu: res.data.shu,
-                      guei:res.data.guei,
-                      num: res.data.num,
-                      num2: res.data.num2,
-                      ppid: res.data.ppid,
+                      lun:res.data.lun,
+                      store:res.data.pro.stock,
+                      productId:res.data.pro.id
                   });
                   console.log(that.data.prodetail2);
               } else {
@@ -438,7 +430,7 @@ Page({
     //    console.log(that.data.ppid);
        var prodetail2 = that.data.prodetail2;
        var buynum = that.data.buynum;
-       var store = prodetail2.store;
+       var store = that.data.store;
        if (buynum > store) {
            wx.showToast({
                title: '库存不足！',
@@ -453,10 +445,9 @@ Page({
          data: {
            uid: app.d.userId,
            pid: that.data.productId,
-           ppid: that.data.ppid,
            num: buynum,
            ptype: ptype,
-           stype:2
+           stype:1
          },
          header: {
            'Content-Type':  'application/x-www-form-urlencoded'

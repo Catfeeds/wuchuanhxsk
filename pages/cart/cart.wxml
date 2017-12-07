@@ -44,11 +44,11 @@
 
          <view class="stepper">
        <!-- 减号 -->
-             <text class="{{minusStatuses[index]}}" data-index="{{index}}" bindtap="bindMinus" data-cartid="{{item.id}}">-</text>
+             <text class="{{minusStatuses[index]}}" data-index="{{index}}" data-stype="{{item.type}}" bindtap="bindMinus" data-cartid="{{item.id}}">-</text>
        <!-- 数值 -->
                 <input type="number" bindchange="bindManual" value="{{item.num}}" />
        <!-- 加号 -->
-              <text class="normal" data-index="{{index}}" bindtap="bindPlus" data-cartid="{{item.id}}">+</text>
+              <text class="normal" data-index="{{index}}"  data-stype="{{item.type}}" bindtap="bindPlus" data-cartid="{{item.id}}">+</text>
       </view> 
        </view>
   </view>

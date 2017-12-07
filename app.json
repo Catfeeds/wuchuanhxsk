@@ -10,13 +10,15 @@
       "pages/search/search",
       "pages/classify/classify",
       "pages/product/product",
+      "pages/product2/product2",
       "pages/ritual/ritual",
       "pages/user/user",
       "pages/address/address",
       "pages/address/user-address/user-address",
       "pages/category/category",
       "pages/logs/logs",
-      "pages/eatIndex/eatIndex"
+      "pages/eatIndex/eatIndex",
+      "pages/playIndex/playIndex"
    ],
    "window": {
       "backgroundTextStyle": "light",

@@ -1,0 +1,78 @@
+<!--index.wxml-->
+<view class="page">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item.photo}}" class="slide-image" width="100%" height="180" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--定位-->
+  <!-- <view class="sb" bindtap="getLocation">
+    {{ding}}
+  </view> -->
+  <!--搜索-->
+  <!-- <view class="sbb" bindtap="sou">
+    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+  </view> -->
+
+  <!-- <view class="df">
+    <view class="df_1" bindtap="qiang" wx:for="{{cat}}" data-id="{{item.id}}" data-name="{{item.name}}">
+      <image src="{{item.bz_1}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view> -->
+  <!--我是一条分割线-->
+  <!-- <view class="xian"></view> -->
+  <!--推荐内容开始-->
+  <!--<view class="name">
+    <i> -活动推荐- </i>
+  </view>-->
+  <view class="cont" >
+    <view class="shop">
+      <view class="shop list">
+        <block>
+          <navigator url="../product2/product2?productId={{item.id}}" hover-class="navigator-hover" class="nav" wx:for="{{list}}">
+            <image src="{{item.photo}}" class="pic"></image>
+            <view class="brand_item">
+              <view class="right_cont">
+                <view class="li_title">
+                  <text class="title">{{item.name}}</text>
+                  <!--<image src="http://img1.imgtn.bdimg.com/it/u=2518065137,3376997676&fm=26&gp=0.jpg" class="rzpic"></image>-->
+                </view>
+                
+                <view class="other">
+                  <text class="ort">{{item.price}}元
+
+                  </text>
+                </view>
+                <view class="price">
+                  <view class="price1">
+                    <text class="coupon1">简</text>
+                    <text class="dispan">{{item.intro}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+
+
+    <view class="name">
+      <text> -热门推荐-</text>
+    </view>
+  </view>
+  <!---最受欢迎TOP10--->
+  <!--横滑动-->
+  <scroll-view scroll-x="true" class="sc">
+    <view class="miu" wx:for="{{tj}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap='gotodetail'>
+      <image src="{{item.photo}}" class="ie"></image>
+      <viem class='mi'>{{item.name}}</viem>
+      <viem class='ma'>{{item.intro}}</viem>
+    </view>
+  </scroll-view>
+  <!--底部清除-->
+
+</view>

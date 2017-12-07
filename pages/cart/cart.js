@@ -11,6 +11,7 @@ Page({
 bindMinus: function(e) {
     var that = this;
     var index = parseInt(e.currentTarget.dataset.index);
+    var stype = e.currentTarget.dataset.stype;
     var num = that.data.carts[index].num;
     // 如果只有1件了，就不允许再减了
     if (num == 1) {
@@ -27,7 +28,8 @@ bindMinus: function(e) {
       data: {
         user_id: app.d.userId,
         num:num,
-        cart_id:cart_id
+        cart_id:cart_id,
+        stype:stype
       },
       header: {
         'Content-Type':  'application/x-www-form-urlencoded'
@@ -69,6 +71,7 @@ bindPlus: function(e) {
     var that = this;
     var index = parseInt(e.currentTarget.dataset.index);
     var num = that.data.carts[index].num;
+    var stype = e.currentTarget.dataset.stype;
     // 自增
     num ++;
     console.log(num);
@@ -79,7 +82,8 @@ bindPlus: function(e) {
       data: {
         user_id: app.d.userId,
         num:num,
-        cart_id:cart_id
+        cart_id:cart_id,
+        stype:stype
       },
       header: {
         'Content-Type':  'application/x-www-form-urlencoded'

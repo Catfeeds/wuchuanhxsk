@@ -17,7 +17,7 @@ Page({
     hui:false,
     one:0,
     temp2:[
-      { id: 0, value: '当堂吃',  checked: 'true'},
+      { id: 0, value: '即用',  checked: 'true'},
       { id: 1, value: '配送', },
     ],
     addr_id:0,
